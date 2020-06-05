@@ -9,13 +9,14 @@ do
     pan.hex"#7209B7",  -- Purple
     pan.hex"#3A0CA3",  -- Trypan Blue
     pan.hex"#4361EE",  -- Ultramarine Blue
-    pan.hex"#4CC9F0",  -- Vivid Sky Blue
+    pan.hex"#00FFFF",  -- Aqua
     pan.hex"#00FA9A",  -- Medium Spring Green
     pan.hex"#FAFA37",  -- Maximum Yellow
     pan.hex"#FFFFFF",  -- White
   }
 
   -- named colors
+  palette.transparent = pan.rgba(0, 0, 0, 0)
   palette.neonPink = palette[1]
   palette.purple = palette[2]
   palette.background = palette[3]
