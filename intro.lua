@@ -82,7 +82,7 @@ function render()
     { time = 2.5, val = 1.0 },
     { time = 4.0, val = 0.0, easing = quarticIn },
   }
-  drawLogo(32, 32, logoScale, la.paints.purple)
+  drawLogo(32, 32, logoScale, la.paints.lightBackground)
   drawLogo(16, 16, logoScale, la.paints.neonPink)
   drawLogo(0, 0, logoScale, la.paints.text)
   drawName(12, 12, la.paints.neonPink)

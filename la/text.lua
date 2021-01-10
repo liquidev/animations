@@ -11,7 +11,7 @@ do
   -- UTF-8 encoded character.
   --
   -- Example:
-  -- text.chars(font, 32, 32, "hello la.text", 16, function (add, index, char)
+  -- text.perchar(font, 32, 32, "hello la.text", 16, function (add, index, char)
   --   local offset = math.sin(pan.time + index / 10)
   --   add(0, offset)
   -- end)
@@ -53,7 +53,30 @@ do
 
     end
   end
-  
+
+  -- text.perchar slideout animation.
+  function text.slideout(
+    start, speed, delay,
+    font, x, y, text_, size, color, w, h, halign, valign
+  )
+    local color_a = color.a
+    pan.begin()
+    text.perchar(
+      font, x, y, text_, size,
+      function (add, index, char)
+        local t = start + index * delay
+        local dy = pan.easel(size, 0, t, speed, quinticOut)
+        local alpha = pan.easel(0, color_a, t, speed, quinticOut)
+        add(0, dy)
+        color.a = alpha
+        pan.fill(solid(color))
+        pan.begin()
+      end,
+      w, h, halign, valign
+    )
+    color.a = color_a
+  end
+
   print("la.text module loaded")
   return text
 

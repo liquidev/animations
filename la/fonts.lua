@@ -2,7 +2,7 @@
 
 do
 
-  local fontFamily = "Inconsolata"
+  local fontFamily = "Roboto Mono"
 
   local fonts = {
     regular = pan.font(fontFamily),
